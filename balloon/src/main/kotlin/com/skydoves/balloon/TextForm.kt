@@ -21,6 +21,7 @@ package com.skydoves.balloon
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
+import android.graphics.text.LineBreaker
 import android.text.method.MovementMethod
 import android.view.Gravity
 import androidx.annotation.ColorInt
@@ -111,7 +112,7 @@ public class TextForm private constructor(
     public var textGravity: Int = Gravity.CENTER
 
     @set:JvmSynthetic
-    public var textJustification: Int = Gravity.CENTER
+    public var textJustification: Int = LineBreaker.JUSTIFICATION_MODE_NONE
 
     /** sets the content text of the form. */
     public fun setText(value: CharSequence): Builder = apply { this.text = value }
