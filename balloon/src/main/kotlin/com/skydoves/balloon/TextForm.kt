@@ -76,6 +76,8 @@ public class TextForm private constructor(
 
   public val textGravity: Int = builder.textGravity
 
+  public val textJustification: Int = builder.textJustification
+
   /** Builder class for [TextForm]. */
   @TextFormDsl
   public class Builder(public val context: Context) {
@@ -107,6 +109,9 @@ public class TextForm private constructor(
 
     @set:JvmSynthetic
     public var textGravity: Int = Gravity.CENTER
+
+    @set:JvmSynthetic
+    public var textJustification: Int = Gravity.CENTER
 
     /** sets the content text of the form. */
     public fun setText(value: CharSequence): Builder = apply { this.text = value }
@@ -159,6 +164,11 @@ public class TextForm private constructor(
     /** sets gravity of the text. */
     public fun setTextGravity(value: Int): Builder = apply {
       this.textGravity = value
+    }
+
+    /** sets justification of the text. */
+    public fun setTextJustification(value: Int): Builder = apply {
+      this.textJustification = value
     }
 
     public fun build(): TextForm = TextForm(this)

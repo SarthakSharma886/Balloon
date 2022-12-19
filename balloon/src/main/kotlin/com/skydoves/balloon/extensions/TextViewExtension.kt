@@ -40,6 +40,9 @@ internal fun TextView.applyTextForm(textForm: TextForm) {
   }
   textSize = textForm.textSize
   gravity = textForm.textGravity
+  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      justificationMode = textForm.textJustification
+  }
   setTextColor(textForm.textColor)
   textForm.textLineSpacing?.let { setLineSpacing(it, 1.0f) }
   textForm.textTypeface?.let { typeface = it } ?: setTypeface(typeface, textForm.textStyle)
